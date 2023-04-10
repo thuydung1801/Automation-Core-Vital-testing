@@ -213,9 +213,9 @@ for (let a = 0; a < 10; a++) {
             for (let i = 0; i <= index; i++) {
                 var file = `${stores[i]}` + a;
             }
-            console.log(file)
+            console.log(file);
 
-           
+
             await playAudit({
                 thresholds: {
                     performance: 50,
@@ -235,7 +235,7 @@ for (let a = 0; a < 10; a++) {
                     },
                     name: "" + file,
                     directory: "lighthous-report-desktop/homepage",
-                    
+
                 },
             });
 
@@ -299,6 +299,54 @@ for (let a = 0; a < 11; a++) {
 
     });
 }
+
+
+urls.forEach((url, index) => {
+test('jewelery: ' + url, async ({ playwright }) => {
+
+    const browser = await playwright.chromium.launch({
+        args: ['--remote-debugging-port=9222'],
+    });
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    await page.goto("https://www.glamira.com/jewelry/");
+    for (let i = 0; i <= index; i++) {
+        var file = `${stores[i]}`;
+    }
+    console.log(file)
+    await playAudit({
+        thresholds: {
+            performance: 50,
+            accessibility: 50,
+            'best-practices': 50,
+            seo: 50,
+            pwa: 50,
+        },
+        ignoreError: true,
+        page: page,
+        port: 9222,
+        reports:
+        {
+            "formats": {
+                html: true,
+                csv: true,
+                json: true
+            },
+            name: "" + file,
+            directory: "lighthous-report-desktop/jewelry"
+        },
+    });
+
+
+
+    await page.close();
+    await context.close();
+    await browser.close();
+})
+});
+
+
+
 
 //checkout cart
 for (let a = 0; a < 2; a++) {

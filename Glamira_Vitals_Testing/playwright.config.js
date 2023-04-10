@@ -49,7 +49,7 @@ module.exports = defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'],
-      //channel: 'chrome',
+      channel: 'chrome',
       launchOptions:{
         args: ["--start-fullscreen"]
       },
