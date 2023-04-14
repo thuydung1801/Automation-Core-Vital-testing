@@ -94,7 +94,7 @@ const urls = [
     // "https://www.glamira.sr/",
     // "https://www.glamira.vn/",
     // "https://www.ring-paare.de/",
-    "https://stage.glamira.co.uk/",
+    "https://dev5.glamira.com/glgb",
     //"https://dev3.glamira.com/glgb/"
 ];
 
@@ -249,6 +249,83 @@ for (let a = 0; a < 10; a++) {
     });
 }
 
+//sign in
+for (let a = 0; a < 10; a++) {
+
+    urls.forEach((url, index) => {
+        test('signin: ' + url + a, async ({ playwright }) => {
+
+            const browser = await playwright.chromium.launch({
+                args: ['--remote-debugging-port=9222'],
+            });
+            const context = await browser.newContext();
+            const page = await context.newPage();
+
+            await page.goto(url);
+            await page.waitForTimeout(5000)
+            await page.evaluate(() => window.scrollTo(0, 900))
+            await page.waitForTimeout(5000)
+            const language = page.locator(
+                "#geoip-detect > div.geoip-detect-right > div > div.geoip-wrapper-content > a.btn-stay-here.geoip-close"
+            )
+            if (await language.isVisible()) {
+                await expect(language).toBeVisible()
+                await language.click()
+            }
+            const cookies = page.locator('#html-body > aside > div > div > div > button.amgdprcookie-button.-allow.-save')
+            if (await cookies.isVisible()) {
+                await cookies.click()
+            }
+            await page.waitForTimeout(5000);
+            await page.locator(
+                "div.header-part-right-logo > ul > li.authorization-link.login > a"
+            ).click();
+            // await page.locator("div.mobi-menu > span").click();
+            // await page.waitForTimeout(5000);
+            // await page.locator("#mm-1 > ul > li > a > span").click();
+            await page.waitForTimeout(2000);
+            await page.locator("#login-email").fill("linh@onlinebizsoft.com");
+            await page.locator("#login-password").fill("Linh@123");
+            await page.locator("#customer_form_login_form_ajax > form > div.actions-toolbar > button").click();
+            await page.waitForTimeout(5000);
+            for (let i = 0; i <= index; i++) {
+                var file = `${stores[i]}` + a;
+            }
+            console.log(file);
+
+
+            await playAudit({
+                thresholds: {
+                    performance: 50,
+                    accessibility: 50,
+                    'best-practices': 50,
+                    seo: 50,
+                    pwa: 50,
+                },
+                ignoreError: true,
+                page: page,
+                port: 9222,
+                reports: {
+                    formats: {
+                        html: true,
+                        csv: true,
+                        json: true
+                    },
+                    name: "" + file,
+                    directory: "lighthous-report-desktop/signin",
+
+                },
+            });
+
+
+            await page.close();
+            await context.close();
+            await browser.close();
+
+        });
+
+    });
+}
 
 
 //product page
@@ -262,7 +339,7 @@ for (let a = 0; a < 11; a++) {
             });
             const context = await browser.newContext();
             const page = await context.newPage();
-            await page.goto(url + 'glamira-diamonds-ring-stella-skug100490.html?alloy=white-375&stone1=diamond-Brillant');
+            await page.goto(url + '/glamira-diamonds-ring-stella-skug100490.html?alloy=white-375&stone1=diamond-Brillant');
             for (let i = 0; i <= index; i++) {
                 var file = `${stores[i]}` + a;
             }
@@ -300,56 +377,105 @@ for (let a = 0; a < 11; a++) {
     });
 }
 
+//landing
+for (let a = 0; a < 11; a++) {
+    urls.forEach((url, index) => {
+        test('jewelery: ' + url + a, async ({ playwright }) => {
 
-urls.forEach((url, index) => {
-test('jewelery: ' + url, async ({ playwright }) => {
+            const browser = await playwright.chromium.launch({
+                args: ['--remote-debugging-port=9222'],
+            });
+            const context = await browser.newContext();
+            const page = await context.newPage();
+            await page.goto(url + "/jewelry/");
+            for (let i = 0; i <= index; i++) {
+                var file = `${stores[i]}` + a;
+            }
+            console.log(file)
+            await playAudit({
+                thresholds: {
+                    performance: 50,
+                    accessibility: 50,
+                    'best-practices': 50,
+                    seo: 50,
+                    pwa: 50,
+                },
+                ignoreError: true,
+                page: page,
+                port: 9222,
+                reports:
+                {
+                    "formats": {
+                        html: false,
+                        csv: true,
+                        json: true
+                    },
+                    name: "" + file,
+                    directory: "lighthous-report-desktop/jewelry"
+                },
+            });
 
-    const browser = await playwright.chromium.launch({
-        args: ['--remote-debugging-port=9222'],
+
+
+            await page.close();
+            await context.close();
+            await browser.close();
+        })
     });
-    const context = await browser.newContext();
-    const page = await context.newPage();
-    await page.goto("https://www.glamira.com/jewelry/");
-    for (let i = 0; i <= index; i++) {
-        var file = `${stores[i]}`;
-    }
-    console.log(file)
-    await playAudit({
-        thresholds: {
-            performance: 50,
-            accessibility: 50,
-            'best-practices': 50,
-            seo: 50,
-            pwa: 50,
-        },
-        ignoreError: true,
-        page: page,
-        port: 9222,
-        reports:
-        {
-            "formats": {
-                html: true,
-                csv: true,
-                json: true
-            },
-            name: "" + file,
-            directory: "lighthous-report-desktop/jewelry"
-        },
+}
+
+//product listing page 
+for (let a = 0; a < 11; a++) {
+    urls.forEach((url, index) => {
+        test('listing page: ' + url + a, async ({ playwright }) => {
+
+            const browser = await playwright.chromium.launch({
+                args: ['--remote-debugging-port=9222'],
+            });
+            const context = await browser.newContext();
+            const page = await context.newPage();
+            await page.goto(url + "/wedding-rings/");
+            for (let i = 0; i <= index; i++) {
+                var file = `${stores[i]}` + a;
+            }
+            console.log(file)
+            await playAudit({
+                thresholds: {
+                    performance: 50,
+                    accessibility: 50,
+                    'best-practices': 50,
+                    seo: 50,
+                    pwa: 50,
+                },
+                ignoreError: true,
+                page: page,
+                port: 9222,
+                reports:
+                {
+                    "formats": {
+                        html: false,
+                        csv: true,
+                        json: true
+                    },
+                    name: "" + file,
+                    directory: "lighthous-report-desktop/listingpage"
+                },
+            });
+
+
+
+            await page.close();
+            await context.close();
+            await browser.close();
+        })
     });
-
-
-
-    await page.close();
-    await context.close();
-    await browser.close();
-})
-});
+}
 
 
 
 
 //checkout cart
-for (let a = 0; a < 2; a++) {
+for (let a = 0; a < 10; a++) {
 
     urls.forEach((url, index) => {
         test('checkout cart: ' + url + a, async ({ playwright }) => {
@@ -359,7 +485,7 @@ for (let a = 0; a < 2; a++) {
             });
             const context = await browser.newContext();
             const page = await context.newPage();
-            await page.goto(url + 'glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant');
+            await page.goto(url + '/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant');
 
             await page.evaluate(() => window.scrollTo(0, 900))
             await page.waitForTimeout(5000)
@@ -378,13 +504,13 @@ for (let a = 0; a < 2; a++) {
             await page.locator("#product-addtocart-button").click();
             await page.waitForTimeout(1000);
 
-            await page.goto(url + 'glamira-bracelet-tanel.html?alloy=white_red-375&stone1=blackdiamond');
-            await page.waitForURL(url + 'glamira-bracelet-tanel.html?alloy=white_red-375&stone1=blackdiamond');
+            await page.goto(url + '/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=blackdiamond');
+            await page.waitForURL(url + '/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=blackdiamond');
             await page.evaluate(() => window.scrollTo(0, 300));
             await page.locator("#product-addtocart-button").click();
             await page.waitForTimeout(1000);
 
-            await page.goto(url + 'glamira-bracelet-tanel.html?alloy=white_red-375&stone1=ruby');
+            await page.goto(url + '/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=ruby');
             await page.evaluate(() => window.scrollTo(0, 300));
             await page.locator("#product-addtocart-button").click();
             await page.waitForTimeout(1000);
@@ -421,10 +547,374 @@ for (let a = 0; a < 2; a++) {
                     "formats": {
                         html: false,
                         csv: true,
-                        json: false
+                        json: true
                     },
                     name: "" + file,
-                    directory: "lighthous-report-desktop/productpage"
+                    directory: "lighthous-report-desktop/checkout-cart"
+                },
+            });
+
+
+
+            await page.close();
+            await context.close();
+            await browser.close();
+        })
+
+    });
+}
+
+//checkout not login
+for (let a = 0; a < 10; a++) {
+
+    urls.forEach((url, index) => {
+        test('checkout not login: ' + url + a, async ({ playwright }) => {
+
+            const browser = await playwright.chromium.launch({
+                args: ['--remote-debugging-port=9222'],
+            });
+            const context = await browser.newContext();
+            const page = await context.newPage();
+            await page.goto(url + '/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant');
+
+            await page.evaluate(() => window.scrollTo(0, 900))
+            await page.waitForTimeout(5000)
+            const language = page.locator(
+                "#geoip-detect > div.geoip-detect-right > div > div.geoip-wrapper-content > a.btn-stay-here.geoip-close"
+            )
+            if (await language.isVisible()) {
+                await expect(language).toBeVisible()
+                await language.click()
+            }
+            const cookies = page.locator('#html-body > aside > div > div > div > button.amgdprcookie-button.-allow.-save')
+            await cookies.click()
+            await page.waitForTimeout(5000)
+
+            await page.evaluate(() => window.scrollTo(0, 300));
+            await page.locator("#product-addtocart-button").click();
+            await page.waitForTimeout(1000);
+
+            await page.goto(url + '/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=blackdiamond');
+            await page.waitForURL(url + '/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=blackdiamond');
+            await page.evaluate(() => window.scrollTo(0, 300));
+            await page.locator("#product-addtocart-button").click();
+            await page.waitForTimeout(1000);
+
+            await page.goto(url + '/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=ruby');
+            await page.evaluate(() => window.scrollTo(0, 300));
+            await page.locator("#product-addtocart-button").click();
+            await page.waitForTimeout(1000);
+
+            await page
+                .locator(
+                    "a.action.showcart"
+                )
+                .click()
+            await page.waitForTimeout(3000);
+            await page
+                .locator(
+                    "#html-body > div.modals-wrapper > aside.modal-slide.minicart.modal-sm._inner-scroll._show > div > div div > div.block-content > div.block-footer > div.actions > div.primary > a"
+                )
+                .click()
+            await page.waitForTimeout(10000);
+
+            const btnCheckout = page.locator("#cart-totals > div > table > tbody > tr.totals.sub > th");
+            if (await btnCheckout.isVisible()) {
+                await expect(btnCheckout).toBeVisible()
+                await page.locator(
+                    "#maincontent > div.columns > div > div.cart-container > div.cart-summary > ul > li > button"
+                ).click()
+            }
+            await page.waitForURL(url + "/checkout/#login-address");
+            await page.waitForTimeout(3000);
+
+            for (let i = 0; i <= index; i++) {
+                var file = `${stores[i]}` + a;
+            }
+            console.log(file)
+            await playAudit({
+                thresholds: {
+                    performance: 50,
+                    accessibility: 50,
+                    'best-practices': 50,
+                    seo: 50,
+                    pwa: 50,
+                },
+                ignoreError: true,
+                page: page,
+                port: 9222,
+                reports:
+                {
+                    "formats": {
+                        html: false,
+                        csv: true,
+                        json: true
+                    },
+                    name: "" + file,
+                    directory: "lighthous-report-desktop/checkout-notlogin"
+                },
+            });
+
+
+
+            await page.close();
+            await context.close();
+            await browser.close();
+        })
+
+    });
+}
+
+//checkout login
+for (let a = 0; a < 10; a++) {
+
+    urls.forEach((url, index) => {
+        test('checkout login: ' + url + a, async ({ playwright }) => {
+
+            const browser = await playwright.chromium.launch({
+                args: ['--remote-debugging-port=9222'],
+            });
+            const context = await browser.newContext();
+            const page = await context.newPage();
+            await page.goto(url + '/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=diamond-Brillant');
+
+            await page.evaluate(() => window.scrollTo(0, 900))
+            await page.waitForTimeout(5000)
+            const language = page.locator(
+                "#geoip-detect > div.geoip-detect-right > div > div.geoip-wrapper-content > a.btn-stay-here.geoip-close"
+            )
+            if (await language.isVisible()) {
+                await expect(language).toBeVisible()
+                await language.click()
+            }
+            const cookies = page.locator('#html-body > aside > div > div > div > button.amgdprcookie-button.-allow.-save')
+            await cookies.click()
+            await page.waitForTimeout(5000)
+
+            await page.evaluate(() => window.scrollTo(0, 300));
+            await page.locator("#product-addtocart-button").click();
+            await page.waitForTimeout(1000);
+
+            await page.goto(url + '/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=blackdiamond');
+            await page.waitForURL(url + '/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=blackdiamond');
+            await page.evaluate(() => window.scrollTo(0, 300));
+            await page.locator("#product-addtocart-button").click();
+            await page.waitForTimeout(1000);
+
+            await page.goto(url + '/glamira-bracelet-tanel.html?alloy=white_red-375&stone1=ruby');
+            await page.evaluate(() => window.scrollTo(0, 300));
+            await page.locator("#product-addtocart-button").click();
+            await page.waitForTimeout(1000);
+
+            await page
+                .locator(
+                    "a.action.showcart"
+                )
+                .click()
+            await page.waitForTimeout(3000);
+            await page
+                .locator(
+                    "#html-body > div.modals-wrapper > aside.modal-slide.minicart.modal-sm._inner-scroll._show > div > div div > div.block-content > div.block-footer > div.actions > div.primary > a"
+                )
+                .click()
+            await page.waitForTimeout(10000);
+
+            const btnCheckout = page.locator("#cart-totals > div > table > tbody > tr.totals.sub > th");
+            if (await btnCheckout.isVisible()) {
+                await expect(btnCheckout).toBeVisible()
+                await page.locator(
+                    "#maincontent > div.columns > div > div.cart-container > div.cart-summary > ul > li > button"
+                ).click()
+            }
+            //await page.waitForURL(url + "/checkout/#login-address");
+            await page.waitForTimeout(5000);
+            const username = page.locator("#checkout-login-email")
+            await expect(username).toBeVisible()
+            await username.fill("linh+1@onlinebizsoft.com")
+            await page.locator("#checkout-login-password").fill("Linh@123")
+            await page
+                .locator(
+                    "#form-login > fieldset > div.actions-toolbar > div.primary > button"
+                )
+                .click()
+
+            for (let i = 0; i <= index; i++) {
+                var file = `${stores[i]}` + a;
+            }
+            console.log(file)
+            await playAudit({
+                thresholds: {
+                    performance: 50,
+                    accessibility: 50,
+                    'best-practices': 50,
+                    seo: 50,
+                    pwa: 50,
+                },
+                ignoreError: true,
+                page: page,
+                port: 9222,
+                reports:
+                {
+                    "formats": {
+                        html: false,
+                        csv: true,
+                        json: true
+                    },
+                    name: "" + file,
+                    directory: "lighthous-report-desktop/checkout-login"
+                },
+            });
+
+
+
+            await page.close();
+            await context.close();
+            await browser.close();
+        })
+
+    });
+}
+
+//return
+for (let a = 0; a < 10; a++) {
+
+    urls.forEach((url, index) => {
+        test('return not login: ' + url + a, async ({ playwright }) => {
+
+            const browser = await playwright.chromium.launch({
+                args: ['--remote-debugging-port=9222'],
+            });
+            const context = await browser.newContext();
+            const page = await context.newPage();
+            await page.goto(url + '/return/');
+            await page.waitForTimeout(5000);
+
+            for (let i = 0; i <= index; i++) {
+                var file = `${stores[i]}` + a;
+            }
+            console.log(file)
+            await playAudit({
+                thresholds: {
+                    performance: 50,
+                    accessibility: 50,
+                    'best-practices': 50,
+                    seo: 50,
+                    pwa: 50,
+                },
+                ignoreError: true,
+                page: page,
+                port: 9222,
+                reports:
+                {
+                    "formats": {
+                        html: false,
+                        csv: true,
+                        json: true
+                    },
+                    name: "" + file,
+                    directory: "lighthous-report-desktop/return-notlogin"
+                },
+            });
+
+
+
+            await page.close();
+            await context.close();
+            await browser.close();
+        })
+
+    });
+}
+
+//sign up
+for (let a = 0; a < 10; a++) {
+
+    urls.forEach((url, index) => {
+        test('sign up: ' + url + a, async ({ playwright }) => {
+
+            const browser = await playwright.chromium.launch({
+                args: ['--remote-debugging-port=9222'],
+            });
+            const context = await browser.newContext();
+            const page = await context.newPage();
+            await page.goto(url + '/customer/account/create/');
+            await page.waitForTimeout(5000);
+
+            for (let i = 0; i <= index; i++) {
+                var file = `${stores[i]}` + a;
+            }
+            console.log(file)
+            await playAudit({
+                thresholds: {
+                    performance: 50,
+                    accessibility: 50,
+                    'best-practices': 50,
+                    seo: 50,
+                    pwa: 50,
+                },
+                ignoreError: true,
+                page: page,
+                port: 9222,
+                reports:
+                {
+                    "formats": {
+                        html: false,
+                        csv: true,
+                        json: true
+                    },
+                    name: "" + file,
+                    directory: "lighthous-report-desktop/signup"
+                },
+            });
+
+
+
+            await page.close();
+            await context.close();
+            await browser.close();
+        })
+
+    });
+}
+
+//review page /glamira-reviews/
+for (let a = 0; a < 10; a++) {
+
+    urls.forEach((url, index) => {
+        test('review page: ' + url + a, async ({ playwright }) => {
+
+            const browser = await playwright.chromium.launch({
+                args: ['--remote-debugging-port=9222'],
+            });
+            const context = await browser.newContext();
+            const page = await context.newPage();
+            await page.goto(url + '/glamira-reviews/');
+            await page.waitForTimeout(5000);
+
+            for (let i = 0; i <= index; i++) {
+                var file = `${stores[i]}` + a;
+            }
+            console.log(file)
+            await playAudit({
+                thresholds: {
+                    performance: 50,
+                    accessibility: 50,
+                    'best-practices': 50,
+                    seo: 50,
+                    pwa: 50,
+                },
+                ignoreError: true,
+                page: page,
+                port: 9222,
+                reports:
+                {
+                    "formats": {
+                        html: false,
+                        csv: true,
+                        json: true
+                    },
+                    name: "" + file,
+                    directory: "lighthous-report-desktop/reviewpage"
                 },
             });
 
