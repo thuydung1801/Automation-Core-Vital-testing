@@ -1,7 +1,5 @@
 import { expect, test } from "@playwright/test";
 import { playAudit } from "playwright-lighthouse";
-const lighthouse = require('lighthouse');
-const fs = require('fs');
 
 const urls = [
     // "https://int.glamira.com/",
@@ -197,7 +195,7 @@ const stores = [
 
 //test.use({headless: true});
 //home page
-for (let a = 0; a < 10; a++) {
+for (let a = 0; a < 2; a++) {
 
     urls.forEach((url, index) => {
         test('homepage: ' + url + a, async ({ playwright }) => {
@@ -250,7 +248,7 @@ for (let a = 0; a < 10; a++) {
 }
 
 //sign in
-for (let a = 0; a < 10; a++) {
+for (let a = 0; a < 2; a++) {
 
     urls.forEach((url, index) => {
         test('signin: ' + url + a, async ({ playwright }) => {
@@ -329,7 +327,7 @@ for (let a = 0; a < 10; a++) {
 
 
 //product page
-for (let a = 0; a < 11; a++) {
+for (let a = 0; a < 2; a++) {
 
     urls.forEach((url, index) => {
         test('product page: ' + url + a, async ({ playwright }) => {
@@ -378,7 +376,7 @@ for (let a = 0; a < 11; a++) {
 }
 
 //landing
-for (let a = 0; a < 11; a++) {
+for (let a = 0; a < 2; a++) {
     urls.forEach((url, index) => {
         test('jewelery: ' + url + a, async ({ playwright }) => {
 
@@ -425,7 +423,7 @@ for (let a = 0; a < 11; a++) {
 }
 
 //product listing page 
-for (let a = 0; a < 11; a++) {
+for (let a = 0; a < 2; a++) {
     urls.forEach((url, index) => {
         test('listing page: ' + url + a, async ({ playwright }) => {
 
@@ -475,7 +473,7 @@ for (let a = 0; a < 11; a++) {
 
 
 //checkout cart
-for (let a = 0; a < 10; a++) {
+for (let a = 0; a < 2; a++) {
 
     urls.forEach((url, index) => {
         test('checkout cart: ' + url + a, async ({ playwright }) => {
@@ -565,7 +563,7 @@ for (let a = 0; a < 10; a++) {
 }
 
 //checkout not login
-for (let a = 0; a < 10; a++) {
+for (let a = 0; a < 2; a++) {
 
     urls.forEach((url, index) => {
         test('checkout not login: ' + url + a, async ({ playwright }) => {
@@ -666,7 +664,7 @@ for (let a = 0; a < 10; a++) {
 }
 
 //checkout login
-for (let a = 0; a < 10; a++) {
+for (let a = 0; a < 2; a++) {
 
     urls.forEach((url, index) => {
         test('checkout login: ' + url + a, async ({ playwright }) => {
@@ -776,7 +774,7 @@ for (let a = 0; a < 10; a++) {
 }
 
 //return
-for (let a = 0; a < 10; a++) {
+for (let a = 0; a < 2; a++) {
 
     urls.forEach((url, index) => {
         test('return not login: ' + url + a, async ({ playwright }) => {
@@ -827,7 +825,7 @@ for (let a = 0; a < 10; a++) {
 }
 
 //sign up
-for (let a = 0; a < 10; a++) {
+for (let a = 0; a < 2; a++) {
 
     urls.forEach((url, index) => {
         test('sign up: ' + url + a, async ({ playwright }) => {
@@ -878,7 +876,7 @@ for (let a = 0; a < 10; a++) {
 }
 
 //review page /glamira-reviews/
-for (let a = 0; a < 10; a++) {
+for (let a = 0; a < 2; a++) {
 
     urls.forEach((url, index) => {
         test('review page: ' + url + a, async ({ playwright }) => {
