@@ -176,96 +176,102 @@ async function populateDirData(directoryPath, outputFilename, headers) {
   return outputFilename;
 }
 
-//example moment().format('YYMMDD')
-// populateDirData(path.join('lighthous-report-desktop', 'homepage'), path.join('lighthous-report-desktop-stats', 'output.csv'))
-//   .then(() => {
-//     console.log('done');
-//   })
-//   .catch(err => {
-//     console.log('Error process:', err)
-//   })
+// example moment().format('YYMMDD')
+populateDirData(path.join('lighthous-report-desktop', 'homepage'), path.join('lighthous-report-desktop-stats', 'output.csv'))
+  .then(() => {
+    console.log('done');
+  })
+  .catch(err => {
+    console.log('Error process:', err)
+  })
 
-// populateDirData(path.join('lighthous-report-desktop', 'productpage'), path.join('lighthous-report-desktop-stats', 'output-productpage.csv'))
-//   .then(() => {
-//     console.log('done');
-//   })
-//   .catch(err => {
-//     console.log('Error process:', err)
-//   }) 
+populateDirData(path.join('lighthous-report-desktop', 'productpage'), path.join('lighthous-report-desktop-stats', 'output-productpage.csv'))
+  .then(() => {
+    console.log('done');
+  })
+  .catch(err => {
+    console.log('Error process:', err)
+  }) 
 
-// populateDirData(path.join('lighthous-report-desktop', 'homepage'), path.join('lighthous-report-desktop-stats', 'homepage.csv'))
-//   .then(() => {
-//     console.log('done');
-//   })
-//   .catch(err => {
-//     console.log('Error process:', err)
-//   })
+populateDirData(path.join('lighthous-report-desktop', 'homepage'), path.join('lighthous-report-desktop-stats', 'homepage.csv'))
+  .then(() => {
+    console.log('done');
+  })
+  .catch(err => {
+    console.log('Error process:', err)
+  })
 
-// populateDirData(path.join('lighthous-report-desktop', 'productpage'), path.join('lighthous-report-desktop-stats', 'productpage.csv'))
-//   .then(() => {
-//     console.log('done');
-//   })
-//   .catch(err => {
-//     console.log('Error process:', err)
-//   }) 
+populateDirData(path.join('lighthous-report-desktop', 'productpage'), path.join('lighthous-report-desktop-stats', 'productpage.csv'))
+  .then(() => {
+    console.log('done');
+  })
+  .catch(err => {
+    console.log('Error process:', err)
+  }) 
 
-//   populateDirData(path.join('lighthous-report-desktop', 'checkout-cart'), path.join('lighthous-report-desktop-stats', 'checkoutcart.csv'))
-//   .then(() => {
-//     console.log('done');
-//   })
-//   .catch(err => {
-//     console.log('Error process:', err)
-//   })
+  populateDirData(path.join('lighthous-report-desktop', 'checkout-cart'), path.join('lighthous-report-desktop-stats', 'checkoutcart.csv'))
+  .then(() => {
+    console.log('done');
+  })
+  .catch(err => {
+    console.log('Error process:', err)
+  })
 
-//   populateDirData(path.join('lighthous-report-desktop', 'checkout-login'), path.join('lighthous-report-desktop-stats', 'checkoutlogin.csv'))
-//   .then(() => {
-//     console.log('done');
-//   })
-//   .catch(err => {
-//     console.log('Error process:', err)
-//   })
+  populateDirData(path.join('lighthous-report-desktop', 'checkout-login'), path.join('lighthous-report-desktop-stats', 'checkoutlogin.csv'))
+  .then(() => {
+    console.log('done');
+  })
+  .catch(err => {
+    console.log('Error process:', err)
+  })
 
-//   populateDirData(path.join('lighthous-report-desktop', 'checkout-notlogin'), path.join('lighthous-report-desktop-stats', 'checkoutnotlogin.csv'))
-//   .then(() => {
-//     console.log('done');
-//   })
-//   .catch(err => {
-//     console.log('Error process:', err)
-//   }) 
+  populateDirData(path.join('lighthous-report-desktop', 'checkout-notlogin'), path.join('lighthous-report-desktop-stats', 'checkoutnotlogin.csv'))
+  .then(() => {
+    console.log('done');
+  })
+  .catch(err => {
+    console.log('Error process:', err)
+  }) 
 
-//   populateDirData(path.join('lighthous-report-desktop', 'jewelry'), path.join('lighthous-report-desktop-stats', 'jewelry.csv'))
-//   .then(() => {
-//     console.log('done');
-//   })
-//   .catch(err => {
-//     console.log('Error process:', err)
-//   })
+  populateDirData(path.join('lighthous-report-desktop', 'jewelry'), path.join('lighthous-report-desktop-stats', 'jewelry.csv'))
+  .then(() => {
+    console.log('done');
+  })
+  .catch(err => {
+    console.log('Error process:', err)
+  })
 
-//   populateDirData(path.join('lighthous-report-desktop', 'listingpage'), path.join('lighthous-report-desktop-stats', 'listingpage.csv'))
-//   .then(() => {
-//     console.log('done');
-//   })
-//   .catch(err => {
-//     console.log('Error process:', err)
-//   })
+  populateDirData(path.join('lighthous-report-desktop', 'listingpage'), path.join('lighthous-report-desktop-stats', 'listingpage.csv'))
+  .then(() => {
+    console.log('done');
+  })
+  .catch(err => {
+    console.log('Error process:', err)
+  })
 
-//   populateDirData(path.join('lighthous-report-desktop', 'myaccount'), path.join('lighthous-report-desktop-stats', 'myaccount.csv'))
-//   .then(() => {
-//     console.log('done');
-//   })
-//   .catch(err => {
-//     console.log('Error process:', err)
-//   })
+  populateDirData(path.join('lighthous-report-desktop', 'myaccount'), path.join('lighthous-report-desktop-stats', 'myaccount.csv'))
+  .then(() => {
+    console.log('done');
+  })
+  .catch(err => {
+    console.log('Error process:', err)
+  })
 
 
-//   populateDirData(path.join('lighthous-report-desktop', 'return-notlogin'), path.join('lighthous-report-desktop-stats', 'returnnotlogin.csv'))
-//   .then(() => {
-//     console.log('done');
-//   })
-//   .catch(err => {
-//     console.log('Error process:', err)
-//   })
-
+  populateDirData(path.join('lighthous-report-desktop', 'return-notlogin'), path.join('lighthous-report-desktop-stats', 'returnnotlogin.csv'))
+  .then(() => {
+    console.log('done');
+  })
+  .catch(err => {
+    console.log('Error process:', err)
+  })
+  populateDirData(path.join('lighthous-report-desktop', 'return-login'), path.join('lighthous-report-desktop-stats', 'returnlogin.csv'))
+  .then(() => {
+    console.log('done');
+  })
+  .catch(err => {
+    console.log('Error process:', err)
+  })
   populateDirData(path.join('lighthous-report-desktop', 'reviewpage'), path.join('lighthous-report-desktop-stats', 'reviewpage.csv'))
   .then(() => {
     console.log('done');
