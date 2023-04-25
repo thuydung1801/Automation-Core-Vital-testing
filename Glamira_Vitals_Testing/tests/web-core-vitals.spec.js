@@ -822,6 +822,69 @@ for (let a = 0; a < 2; a++) {
         })
 
     });
+} 
+
+//return login
+for (let a = 0; a < 2; a++) {
+
+    urls.forEach((url, index) => {
+        test('return  login: ' + url + a, async ({ playwright }) => {
+
+            const browser = await playwright.chromium.launch({
+                args: ['--remote-debugging-port=9222'],
+            });
+            const context = await browser.newContext();
+            const page = await context.newPage();
+            await page.goto(url);
+            // await page.waitForTimeout(5000);   
+            await page.waitForTimeout(5000);
+            await page.locator(
+                "div.header-part-right-logo > ul > li.authorization-link.login > a"
+            ).click();
+            // await page.locator("div.mobi-menu > span").click();
+            // await page.waitForTimeout(5000);
+            // await page.locator("#mm-1 > ul > li > a > span").click();
+            await page.waitForTimeout(2000);
+            await page.locator("#login-email").fill("linh@onlinebizsoft.com");
+            await page.locator("#login-password").fill("Linh@123");
+            await page.locator("#customer_form_login_form_ajax > form > div.actions-toolbar > button").click();
+            await page.waitForTimeout(5000); 
+            await page.goto(url + "/return");
+            for (let i = 0; i <= index; i++) {
+                var file = `${stores[i]}` + a;
+            }
+            console.log(file)
+            await playAudit({
+                thresholds: {
+                    performance: 50,
+                    accessibility: 50,
+                    'best-practices': 50,
+                    seo: 50,
+                    pwa: 50,
+                },
+                ignoreError: true,
+                page: page,
+                port: 9222,
+                reports:
+                {
+                    "formats": {
+                        html: false,
+                        csv: true,
+                        json: true
+                    },
+                    name: "" + file,
+                    directory: "lighthous-report-desktop/return-login"
+                },
+            });
+
+
+
+            await page.close();
+            await context.close();
+            await browser.close();
+        })
+
+    });
 }
 
 //sign up

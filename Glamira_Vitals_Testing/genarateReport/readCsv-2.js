@@ -193,78 +193,78 @@ async function populateDirData(directoryPath, outputFilename, headers) {
 //     console.log('Error process:', err)
 //   }) 
 
-populateDirData(path.join('lighthous-report-desktop', 'homepage'), path.join('lighthous-report-desktop-stats', 'homepage.csv'))
-  .then(() => {
-    console.log('done');
-  })
-  .catch(err => {
-    console.log('Error process:', err)
-  })
+// populateDirData(path.join('lighthous-report-desktop', 'homepage'), path.join('lighthous-report-desktop-stats', 'homepage.csv'))
+//   .then(() => {
+//     console.log('done');
+//   })
+//   .catch(err => {
+//     console.log('Error process:', err)
+//   })
 
-populateDirData(path.join('lighthous-report-desktop', 'productpage'), path.join('lighthous-report-desktop-stats', 'productpage.csv'))
-  .then(() => {
-    console.log('done');
-  })
-  .catch(err => {
-    console.log('Error process:', err)
-  }) 
+// populateDirData(path.join('lighthous-report-desktop', 'productpage'), path.join('lighthous-report-desktop-stats', 'productpage.csv'))
+//   .then(() => {
+//     console.log('done');
+//   })
+//   .catch(err => {
+//     console.log('Error process:', err)
+//   }) 
 
-  populateDirData(path.join('lighthous-report-desktop', 'checkout-cart'), path.join('lighthous-report-desktop-stats', 'checkoutcart.csv'))
-  .then(() => {
-    console.log('done');
-  })
-  .catch(err => {
-    console.log('Error process:', err)
-  })
+//   populateDirData(path.join('lighthous-report-desktop', 'checkout-cart'), path.join('lighthous-report-desktop-stats', 'checkoutcart.csv'))
+//   .then(() => {
+//     console.log('done');
+//   })
+//   .catch(err => {
+//     console.log('Error process:', err)
+//   })
 
-  populateDirData(path.join('lighthous-report-desktop', 'checkout-login'), path.join('lighthous-report-desktop-stats', 'checkoutlogin.csv'))
-  .then(() => {
-    console.log('done');
-  })
-  .catch(err => {
-    console.log('Error process:', err)
-  })
+//   populateDirData(path.join('lighthous-report-desktop', 'checkout-login'), path.join('lighthous-report-desktop-stats', 'checkoutlogin.csv'))
+//   .then(() => {
+//     console.log('done');
+//   })
+//   .catch(err => {
+//     console.log('Error process:', err)
+//   })
 
-  populateDirData(path.join('lighthous-report-desktop', 'checkout-notlogin'), path.join('lighthous-report-desktop-stats', 'checkoutnotlogin.csv'))
-  .then(() => {
-    console.log('done');
-  })
-  .catch(err => {
-    console.log('Error process:', err)
-  }) 
+//   populateDirData(path.join('lighthous-report-desktop', 'checkout-notlogin'), path.join('lighthous-report-desktop-stats', 'checkoutnotlogin.csv'))
+//   .then(() => {
+//     console.log('done');
+//   })
+//   .catch(err => {
+//     console.log('Error process:', err)
+//   }) 
 
-  populateDirData(path.join('lighthous-report-desktop', 'jewelry'), path.join('lighthous-report-desktop-stats', 'jewelry.csv'))
-  .then(() => {
-    console.log('done');
-  })
-  .catch(err => {
-    console.log('Error process:', err)
-  })
+//   populateDirData(path.join('lighthous-report-desktop', 'jewelry'), path.join('lighthous-report-desktop-stats', 'jewelry.csv'))
+//   .then(() => {
+//     console.log('done');
+//   })
+//   .catch(err => {
+//     console.log('Error process:', err)
+//   })
 
-  populateDirData(path.join('lighthous-report-desktop', 'listingpage'), path.join('lighthous-report-desktop-stats', 'listingpage.csv'))
-  .then(() => {
-    console.log('done');
-  })
-  .catch(err => {
-    console.log('Error process:', err)
-  })
+//   populateDirData(path.join('lighthous-report-desktop', 'listingpage'), path.join('lighthous-report-desktop-stats', 'listingpage.csv'))
+//   .then(() => {
+//     console.log('done');
+//   })
+//   .catch(err => {
+//     console.log('Error process:', err)
+//   })
 
-  populateDirData(path.join('lighthous-report-desktop', 'myaccount'), path.join('lighthous-report-desktop-stats', 'myaccount.csv'))
-  .then(() => {
-    console.log('done');
-  })
-  .catch(err => {
-    console.log('Error process:', err)
-  })
+//   populateDirData(path.join('lighthous-report-desktop', 'myaccount'), path.join('lighthous-report-desktop-stats', 'myaccount.csv'))
+//   .then(() => {
+//     console.log('done');
+//   })
+//   .catch(err => {
+//     console.log('Error process:', err)
+//   })
 
 
-  populateDirData(path.join('lighthous-report-desktop', 'return-notlogin'), path.join('lighthous-report-desktop-stats', 'returnnotlogin.csv'))
-  .then(() => {
-    console.log('done');
-  })
-  .catch(err => {
-    console.log('Error process:', err)
-  })
+//   populateDirData(path.join('lighthous-report-desktop', 'return-notlogin'), path.join('lighthous-report-desktop-stats', 'returnnotlogin.csv'))
+//   .then(() => {
+//     console.log('done');
+//   })
+//   .catch(err => {
+//     console.log('Error process:', err)
+//   })
 
   populateDirData(path.join('lighthous-report-desktop', 'reviewpage'), path.join('lighthous-report-desktop-stats', 'reviewpage.csv'))
   .then(() => {
@@ -274,18 +274,18 @@ populateDirData(path.join('lighthous-report-desktop', 'productpage'), path.join(
     console.log('Error process:', err)
   })
 
-  populateDirData(path.join('lighthous-report-desktop', 'signin'), path.join('lighthous-report-desktop-stats', 'signin.csv'))
-  .then(() => {
-    console.log('done');
-  })
-  .catch(err => {
-    console.log('Error process:', err)
-  })
+  // populateDirData(path.join('lighthous-report-desktop', 'signin'), path.join('lighthous-report-desktop-stats', 'signin.csv'))
+  // .then(() => {
+  //   console.log('done');
+  // })
+  // .catch(err => {
+  //   console.log('Error process:', err)
+  // })
 
-  populateDirData(path.join('lighthous-report-desktop', 'signup'), path.join('lighthous-report-desktop-stats', 'signup.csv'))
-  .then(() => {
-    console.log('done');
-  })
-  .catch(err => {
-    console.log('Error process:', err)
-  })
+  // populateDirData(path.join('lighthous-report-desktop', 'signup'), path.join('lighthous-report-desktop-stats', 'signup.csv'))
+  // .then(() => {
+  //   console.log('done');
+  // })
+  // .catch(err => {
+  //   console.log('Error process:', err)
+  // })
