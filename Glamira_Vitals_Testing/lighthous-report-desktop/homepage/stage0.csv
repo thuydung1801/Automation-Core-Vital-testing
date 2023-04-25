@@ -1,25 +1,25 @@
 requestedUrl,finalUrl,category,name,title,type,score
-https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,performance-score,Overall Performance Category Score,numeric,0.26
+https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,performance-score,Overall Performance Category Score,numeric,0.49
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,first-contentful-paint,First Contentful Paint,numeric,0.83
-https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,interactive,Time to Interactive,numeric,0.01
-https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,speed-index,Speed Index,numeric,0.01
+https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,interactive,Time to Interactive,numeric,0
+https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,speed-index,Speed Index,numeric,0.31
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,total-blocking-time,Total Blocking Time,numeric,0
-https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,largest-contentful-paint,Largest Contentful Paint,numeric,0.09
+https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,largest-contentful-paint,Largest Contentful Paint,numeric,0.9
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,cumulative-layout-shift,Cumulative Layout Shift,numeric,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,max-potential-fid,Max Potential First Input Delay,numeric,0
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,first-meaningful-paint,First Meaningful Paint,numeric,0.94
-https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,render-blocking-resources,Eliminate render-blocking resources,numeric,0.48
+https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,render-blocking-resources,Eliminate render-blocking resources,numeric,0.47
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,uses-responsive-images,Properly size images,numeric,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,offscreen-images,Defer offscreen images,numeric,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,unminified-css,Minify CSS,numeric,1
-https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,unminified-javascript,Minify JavaScript,numeric,0.32
+https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,unminified-javascript,Minify JavaScript,numeric,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,unused-css-rules,Reduce unused CSS,numeric,1
-https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,unused-javascript,Reduce unused JavaScript,numeric,0.68
+https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,unused-javascript,Reduce unused JavaScript,numeric,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,uses-optimized-images,Efficiently encode images,numeric,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,modern-image-formats,Serve images in next-gen formats,numeric,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,uses-text-compression,Enable text compression,numeric,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,uses-rel-preconnect,Preconnect to required origins,numeric,1
-https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,server-response-time,Initial server response time was short,binary,208.283
+https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,server-response-time,Initial server response time was short,binary,209.107
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,redirects,Avoid multiple page redirects,numeric,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,uses-rel-preload,Preload key requests,notApplicable,-1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,uses-http2,Use HTTP/2,numeric,1
@@ -36,7 +36,7 @@ https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,bootup-t
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,mainthread-work-breakdown,Minimize main-thread work,numeric,0
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,font-display,All text remains visible during webfont loads,binary,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,resource-summary,Keep request counts low and transfer sizes small,informative,-1
-https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,third-party-summary,Minimize third-party usage,binary,1
+https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,third-party-summary,Reduce the impact of third-party code,binary,0
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,third-party-facades,Lazy load third-party resources with facades,notApplicable,-1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,largest-contentful-paint-element,Largest Contentful Paint element,informative,-1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Performance,lcp-lazy-loaded,Largest Contentful Paint image was not lazily loaded,binary,1
@@ -121,14 +121,14 @@ https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,notif
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,no-vulnerable-libraries,Avoids front-end JavaScript libraries with known security vulnerabilities,binary,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,csp-xss,Ensure CSP is effective against XSS attacks,informative,-1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,password-inputs-can-be-pasted-into,Allows users to paste into password fields,binary,1
-https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,image-aspect-ratio,Displays images with incorrect aspect ratio,binary,0
+https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,image-aspect-ratio,Displays images with correct aspect ratio,binary,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,image-size-responsive,Serves images with low resolution,binary,0
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,preload-fonts,Fonts with `font-display: optional` are preloaded,notApplicable,-1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,doctype,Page has the HTML doctype,binary,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,charset,Properly defines charset,error,-1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,js-libraries,Detected JavaScript libraries,informative,-1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,deprecations,Avoids deprecated APIs,binary,1
-https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,errors-in-console,No browser errors logged to the console,binary,1
+https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,errors-in-console,Browser errors were logged to the console,binary,0
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,valid-source-maps,Page has valid source maps,binary,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,Best Practices,inspector-issues,No issues in the `Issues` panel in Chrome Devtools,binary,1
 https://dev5.glamira.com/glgb,https://dev5.glamira.com/glgb,SEO,seo-score,Overall SEO Category Score,numeric,0.84

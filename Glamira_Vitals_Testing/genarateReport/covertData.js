@@ -1,7 +1,7 @@
 const fs = require('fs');
 const csv = require('csv-parser');
 
-const directoryPath = './lighthous-report-desktop/homepage/';
+const directoryPath = './lighthous-report-desktop/reviewpage/';
 
 // Read all JSON files in directory
 fs.readdir(directoryPath, (err, files) => {
