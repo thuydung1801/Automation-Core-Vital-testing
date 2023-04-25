@@ -37,7 +37,9 @@ fs.readdir(directoryPath, (err, files) => {
           // Convert data back to CSV format
           const header = Object.keys(updatedResults[0]).join(',');
           const updatedCsvData = updatedResults.map((result) => {
-            return Object.values(result).join(',');
+            return Object.values(result)
+              .map(field => field ? `"${field.toString().replace(/"/g, '""')}"` : "")
+              .join(',');
           }).join('\n');
           
           // Write updated data back to CSV file
